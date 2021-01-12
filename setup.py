@@ -21,7 +21,7 @@ try:
         username = raw_input("what is your username (needed for directory fixes): ")
     else:
         username = getpass.getuser()
-    subprocess.call(["bash", "install_helper.sh"])
+    subprocess.call(["sh", "install_helper.sh"])
     setup(
         name='whatwaf',
         version=VERSION,
