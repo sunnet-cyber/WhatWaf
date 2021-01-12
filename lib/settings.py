@@ -599,7 +599,7 @@ def write_to_file(filename, path, data, **kwargs):
     write the data to a file
     """
     write_yaml = kwargs.get("write_yaml", False)
-    write_json = kwargs.get("write_json", False)
+    write_json = kwargs.get("write_json", True)
     write_csv = kwargs.get("write_csv", False)
     save_copy = kwargs.get("save_copy_to", None)
 
