@@ -76,7 +76,8 @@ URL_QUERY_REGEX = re.compile(r"(.*)[?|#](.*){1}\=(.*)")
 CUR_DIR = os.getcwd()
 
 # path to our home directory
-HOME = "{}/.whatwaf".format(os.path.expanduser("~"))
+#HOME = "{}/.whatwaf".format(os.path.expanduser("~"))
+HOME = "."
 
 # plugins (waf scripts) path
 try:
