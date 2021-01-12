@@ -652,7 +652,10 @@ def write_to_file(filename, path, data, **kwargs):
     if save_copy is not None:
         import shutil
         try:
+            print('full_path = ', full_path)
+            print('save_copy = ', save_copy)
             shutil.copy(full_path, save_copy)
+            
             lib.formatter.info("copy of file saved to {}".format(save_copy))
         except Exception as e:
             lib.formatter.error("failed to save copy of file, do you have permissions?")
