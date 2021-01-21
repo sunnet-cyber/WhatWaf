@@ -442,6 +442,9 @@ def detection_main(url, payloads, cursor, **kwargs):
             file_start = url.split("/")[2].split(".")[1]
         else:
             file_start = url.split(".")[1]
+        
+        file_start = 'waf'
+        
         if use_json:
             ext = ".json"
         elif use_yaml:

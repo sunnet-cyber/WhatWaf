@@ -73,11 +73,12 @@ PROTOCOL_DETECTION = re.compile("http(s)?")
 URL_QUERY_REGEX = re.compile(r"(.*)[?|#](.*){1}\=(.*)")
 
 # current working directory
-CUR_DIR = os.getcwd()
+#CUR_DIR = os.getcwd()
+CUR_DIR = "/app/tools/WhatWaf/"
 
 # path to our home directory
 #HOME = "{}/.whatwaf".format(os.path.expanduser("~"))
-HOME = "."
+HOME = "/app/tools/WhatWaf/"
 
 # plugins (waf scripts) path
 try:
@@ -100,7 +101,8 @@ UNKNOWN_FIREWALL_NAME = "Unknown Firewall"
 UNKNOWN_PROTECTION_FINGERPRINT_PATH = "{}/fingerprints".format(HOME)
 
 # JSON data file path
-JSON_FILE_PATH = "{}/json_output".format(HOME)
+#JSON_FILE_PATH = "{}/json_output".format(HOME)
+JSON_FILE_PATH = "{}/".format(HOME)
 
 # YAML data file path
 YAML_FILE_PATH = "{}/yaml_output".format(HOME)
@@ -654,6 +656,10 @@ def write_to_file(filename, path, data, **kwargs):
         try:
             print('full_path = ', full_path)
             print('save_copy = ', save_copy)
+
+            if not os.path.exists(save_copy):
+                os.makedirs(save_copy)
+
             shutil.copy(full_path, save_copy)
             
             lib.formatter.info("copy of file saved to {}".format(save_copy))
